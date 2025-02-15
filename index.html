@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiran 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rowdies:wght@300;400;700&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4b0082, #ff1493);
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    background-color: rgba(20, 20, 40, 0.9);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(20, 20, 40, 0.9);
+    border-radius: 10px;
+    display: none;
+    min-width: 180px;
+    padding: 5px 0;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    color: white;
+    display: block;
+    padding: 10px 15px;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 0, 0.8);
+    color: black;
+    border-radius: 5px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.hero {
+    margin-top: 10px;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-family: "Open Sans", serif;
+    font-size: 90px;
+    font-weight: bold;
+    font-optical-sizing: auto;
+}
+
+
+.hero .register-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: yellow;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.event-section{
+    background: linear-gradient(135deg, #1b0032, #3d004f);
+}
+.events {
+    padding: 50px;
+}
+
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: black;
+}
+
+.countdown-container {
+    padding: 50px;
+    background: linear-gradient(135deg, #1b0032, #3d004f);
+}
+
+/* Countdown Title */
+.countdown-title {
+    letter-spacing: 3px;
+    font-size: 18px;
+    color: #ff1493;
+}
+
+/* Countdown Boxes */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+    
+}
+
+.countdown-box {
+    background: linear-gradient(135deg, #c400ff, #ff1493);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80px;
+    
+}
+
+.countdown-box span {
+    font-size: 32px;
+    font-weight: bold;
+    display: block;
+}
+
+.countdown-box p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Separator */
+.separator {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.event-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 50px;
+}
+
+/* Event Stats (Left Box) */
+.event-stats {
+    background: linear-gradient(135deg, #33004d, #980098);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.event-stats h2 {
+    font-size: 58px;
+    margin: 15px 0;
+}
+
+.event-stats span {
+    color: #ff1493;
+    font-weight: bold;
+}
+
+/* Event Details (Right Box) */
+.event-details {
+    max-width: 500px;
+}
+
+.event-title {
+    color: #ff1493;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.event-details h2 {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.event-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* Read More Button */
+.read-more {
+    background: linear-gradient(135deg, #6a00ff, #ff00ff);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    background: linear-gradient(135deg, #ff00ff, #6a00ff);
+}
+
+.hello{
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #0d0d1a;
+            text-align: center;
+            padding: 50px;
+        }
+        .pricing-section {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .pricing-title {
+            color: #ff0080;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .pricing-header {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #1a1a2e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 15px rgba(255, 0, 128, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff0080, #8000ff);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .desc {
+            font-size: 14px;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .check span {
+            color: #00ff99;
+            font-size: 16px;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff0080, #8000ff);
+            border: none;
+            color: white;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #8000ff, #ff0080);
+        }
+
+    .nithish{
+      background: linear-gradient(to bottom, #4b006e, #000000);
+      color: white;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    .title-super-unique {
+      font-size: 3em;
+      padding: 20px 0;
+      color: #ff007f;
+    }
+    .circle-box-wow {
+      border-radius: 0%;
+      overflow: hidden;
+      border: 5px solid #ff007f;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+      cursor: pointer;
+      width: 350px;
+      height: 250px;
+      margin: 0 auto;
+    }
+    .circle-box-wow:hover {
+      transform: scale(1.1);
+    }
+    .circle-img-wow {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0%;
+    }
+    .event-label-zing {
+      margin-top: 15px;
+      font-size: 1.2em;
+    }
+    .scroll-top-magic {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff007f;
+      border-radius: 50%;
+      padding: 10px;
+      color: white;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .scroll-top-magic:hover {
+      background: #ff66a3;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li>
+                <img src="/logo.png" alt="">
+            </li>
+            <li class="dropdown">
+                <a href="#">Home ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Updates</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Hackathons ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Upcoming Hackathons</a></li>
+                    <li><a href="#">Past Hackathons</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Tech Fest ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Workshops</a></li>
+                    <li><a href="#">Tech Talks</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Spotlight Events ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Startup Stories</a></li>
+                    <li><a href="#">Project Expo</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Cultural Contests ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Dance</a></li>
+                    <li><a href="#">Drama</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Celebrity Shows</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Thiran 2026</h1>
+        <p>Confluence of Talents</p>
+        <h2>A National Level Inter College Techno Cultural Sports Fest</h2>
+        <h2>20,21,22  February</h2>
+        <a href="#" class="register-btn">Register Now</a>
+    </section>
+
+    <section class="events">
+        <h2>Events & Activities</h2>
+        <div class="event-grid">
+            <div class="event">Hackathons</div>
+            <div class="event">Workshops</div>
+            <div class="event">Master Classes</div>
+            <div class="event">Spotlight Events</div>
+            <div class="event">Tech & Non-Tech Contests</div>
+            <div class="event">Startup Stories</div>
+            <div class="event">Project Expo</div>
+            <div class="event">Celebrity Shows</div>
+        </div>
+    </section>
+
+    
+    <div class="countdown-container">
+        <h3 class="countdown-title">C O U N T D O W N</h3>
+        <h2>Countdown Until the Event.<br>Register Now</h2>
+        <div class="countdown">
+            <div class="countdown-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <span class="separator">:</span>
+            <div class="countdown-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <span class="separator">:</span>
+            <div class="countdown-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <span class="separator">:</span>
+            <div class="countdown-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="event-section">
+        <div class="event-stats">
+            <h2><span>180+</span> Events</h2>
+            <h2><span>15 Lakhs</span> Worth Prizes</h2>
+            <h2><span>06</span> Hackathons</h2>
+            <h2><span>35+</span> Workshops</h2>
+            <h2><span>3 Days</span> Celebrity Shows</h2>
+        </div>
+
+        <div class="event-details">
+            <h3 class="event-title">ABOUT EVENT</h3>
+            <h2>Thiran 2025 is here!</h2>
+            <p>
+                Sri Eshwar’s mega inter-college techno-cultural-sports fest is on its way!
+                Students from all across the nation will be coming in to showcase their
+                skills in every aspect – a confluence of talents in the truest sense!
+                Participate in hackathons, attend workshops or masterclasses, or test
+                your skills in exciting tech and non-tech challenges. It's going to be a 
+                non-stop tech-frenzy! At the end of each day, vibe with your friends as
+                you enjoy mega celebrity performances. It’s going to be awesome!
+            </p>
+            <button class="read-more">Read More</button>
+        </div>
+    </section>
+
+
+    <script>
+        // Set the event date (YYYY, MM (0-indexed), DD, HH, MM, SS)
+const eventDate = new Date("February 20, 2025 00:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = eventDate - now;
+    if (timeLeft < 0) {
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+        return;
+    }
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+    </script>
+<div class="nithish">
+    <h1 class="title-super-unique">Events</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/Ellipse-124.webp" alt="Hackathons">
+          </div>
+          <div class="event-label-zing">Hackathons</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/CIRCLE-ICON-09-copy.jpg" alt="Workshops">
+          </div>
+          <div class="event-label-zing">Workshops</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/Ellipse-123.webp" alt="Master Class">
+          </div>
+          <div class="event-label-zing">Master Class</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/project-expo.png" alt="Project Expo">
+          </div>
+          <div class="event-label-zing">Project Expo</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/CIRCLE-ICON-10-copy.png" alt="Paper Presentation">
+          </div>
+          <div class="event-label-zing">Paper Presentation</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/Ellipse-125.webp" alt="Tech Events">
+          </div>
+          <div class="event-label-zing">Tech Events</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/Ellipse-122-1.webp" alt="Non Tech Events">
+          </div>
+          <div class="event-label-zing">Non Tech Events</div>
+        </div><br>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="circle-box-wow">
+            <img class="circle-img-wow" src="https://thiran.sece.ac.in/wp-content/uploads/2025/01/Ellipse-125-1.webp" alt="Cultural Contests">
+          </div>
+          <div class="event-label-zing">Cultural Contests</div>
+        </div>
+      </div><br>
+    </div>
+    <div class="scroll-top-magic" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+   
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    </script>
+
+    
+<div class="hello">
+        <div class="pricing-section">
+            <p class="pricing-title">Ticket Pricing</p>
+            <h1 class="pricing-header">Event Pass & Tickets</h1>
+
+            <div class="pricing-cards">
+                <div class="card">
+                    <p class="tag">One Day Pass</p>
+                    <p class="price">Rs. 300</p>
+                    <p class="desc">For one Person Ticket</p>
+                    <div class="check"><span>✔</span> Entry to all events for the chosen day.</div>
+                    <div class="check"><span>✔</span> Veg/Non-Veg Lunch Included.</div>
+                    <a href="#" class="buy-btn">BUY YOUR PASS</a>
+                </div>
+
+                <div class="card">
+                    <p class="tag">Premium Pass (Two Days)</p>
+                    <p class="price">Rs. 500</p>
+                    <p class="desc">For one Person Ticket</p>
+                    <div class="check"><span>✔</span> Entry to all events for two days.</div>
+                    <div class="check"><span>✔</span> Veg/Non-Veg Lunch Included.</div>
+                    <a href="#" class="buy-btn">BUY YOUR PASS</a>
+                </div>
+
+                <div class="card">
+                    <p class="tag">Elite Pass (Three Days)</p>
+                    <p class="price">Rs. 750</p>
+                    <p class="desc">For one Person Ticket</p>
+                    <div class="check"><span>✔</span> Entry to all events for all three days.</div>
+                    <div class="check"><span>✔</span> Veg/Non-Veg Lunch Included.</div>
+                    <a href="#" class="buy-btn">BUY YOUR PASS</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+</div>
+    <footer>
+        <p>© 2025 Sri Eshwar College of Engineering | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
